@@ -39,7 +39,6 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
         // Populate the ViewHolder with data
         holder.imageView.setImageResource(house.getImageResourceId());
         holder.locationTextView.setText(house.getLocation());
-        holder.ratingTextView.setText(String.valueOf(house.getRating()));
         holder.priceTextView.setText(house.getPrice());
         holder.addressTextView.setText(house.getAddress());
     }
@@ -52,7 +51,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
     public static class RecommendedViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView locationTextView;
-        TextView ratingTextView;
+
         TextView priceTextView;
         TextView addressTextView;
 
@@ -60,7 +59,6 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView3);
             locationTextView = itemView.findViewById(R.id.tv7);
-            ratingTextView = itemView.findViewById(R.id.tv8);
             priceTextView = itemView.findViewById(R.id.tv9);
             addressTextView = itemView.findViewById(R.id.tv10);
         }

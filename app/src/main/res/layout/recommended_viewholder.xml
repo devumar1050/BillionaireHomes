@@ -1,76 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="225dp"
-    android:layout_height="260dp"
-    android:layout_margin="8dp"
-    android:background="#FFFFFF">
-
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFF"
+    app:cardCornerRadius="30dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="124dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:padding="10dp"
+        android:layout_gravity="center"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.circleImageView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/h_1" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="38dp"
-        android:layout_height="40dp"
-        app:srcCompat="@drawable/favorite"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints" />
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
     <TextView
         android:id="@+id/tv7"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:layout_marginTop="10dp"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp"
+        android:layout_marginStart="10dp"
         android:text="Johar Town Lahore"
         android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+      />
 
-    <TextView
-        android:id="@+id/tv8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="5"
-        android:textSize="15dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tv7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv7" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="13dp"
-        android:src="@drawable/star"
-        app:layout_constraintBottom_toBottomOf="@+id/tv8"
-        app:layout_constraintEnd_toEndOf="@+id/tv8"
-        app:layout_constraintTop_toTopOf="@+id/tv8">
-
-    </ImageView>
 
     <TextView
         android:id="@+id/tv9"
@@ -79,12 +44,15 @@
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:text="Rs 2,2500000"
-        android:textSize="15dp"
+        android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="#806C00"
         app:layout_constraintStart_toStartOf="@+id/tv7"
         app:layout_constraintTop_toBottomOf="@+id/tv7" />
-
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
@@ -103,10 +71,10 @@
         android:text="House No 212, Block D"
         android:textStyle="bold"
         android:textColor="@color/black"
+        android:layout_gravity="center"
         android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        tools:layout_editor_absoluteX="45dp"
-        tools:ignore="MissingConstraints" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+         />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
