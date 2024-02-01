@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1017465452454",
+    "project_id": "billionairehomes-83e05",
+    "storage_bucket": "billionairehomes-83e05.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017465452454:android:3959bc410780ce449a0167",
+        "android_client_info": {
+          "package_name": "com.example.billionairehomes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1017465452454-cce2pn6hlpij1fui3hpt2i345ak58fom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvHu4lYqGJThtLjoGE63EFzg0AllPYtFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1017465452454-cce2pn6hlpij1fui3hpt2i345ak58fom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
