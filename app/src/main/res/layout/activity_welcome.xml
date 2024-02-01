@@ -5,26 +5,65 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.Welcome"
+    tools:context=".Activity."
     android:orientation="vertical"
-    android:background="@dr"
+    android:background="@drawable/start1"
     android:gravity="center">
 
-
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </ImageView>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_margin="8dp"
-            android:text="Next"
-            android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:id="@+id/tvSkip"
             android:textStyle="bold"
-            android:id="@+id/btnNext"
-            android:textColor="@color/white"
-            android:backgroundTint="#DDAC19"
-            />
+            android:textSize="20dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp">
+
+        </TextView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Billionaire Homes"
+        android:textColor="@color/black"
+        android:textSize="27dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="top"
+        android:textStyle="bold"
+        android:gravity="center"
+       >
+
+    </TextView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="where your dream home is just a tap away"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_gravity="top"
+        android:gravity="center"
+        android:layout_marginBottom="250dp">
+    </TextView>
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:backgroundTint="#AC6C05"
+        android:text="Next"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="150dp"/>
+    </LinearLayout>
 </LinearLayout>

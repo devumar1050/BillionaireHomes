@@ -30,13 +30,7 @@ public class SplashScreen extends AppCompatActivity {
                 SharedPreferences sPref = getSharedPreferences("userdata", MODE_PRIVATE);
                 String text = sPref.getString("USERNAME_KEY", "");
                 Intent intent;
-                if(text.isEmpty())
-                {
-                    intent = new Intent(SplashScreen.this, MainActivity.class);
-                }
-                else {
-                    intent = new Intent(SplashScreen.this, MainActivity.class);
-                }
+                intent = new Intent(SplashScreen.this, Welcome.class);
                 startActivity(intent);
                 finish();
 
