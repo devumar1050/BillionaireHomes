@@ -16,6 +16,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
 
@@ -70,18 +75,34 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Toast.makeText(login.this, "Login successful.",
-                                    Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            // Get the user ID of the signed-in user
+                            String userId = mAuth.getCurrentUser().getUid();
+
+                            // Retrieve the user's data from the database
+                            DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+                            usersRef.child("name").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    String userName = dataSnapshot.getValue(String.class);
+                                    // Display a welcome message with the user's name
+                                    Toast.makeText(login.this, "Welcome " + userName + "!", Toast.LENGTH_SHORT).show();
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    // Handle error
+                                }
+                            });
+
+                            // Navigate to the next activity upon successful sign-in
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             finish();
-                            // Navigate to the next activity or perform other actions upon successful sign-in
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(login.this, "wrong email or password.",
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this, "Wrong email or password.", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
+
 }

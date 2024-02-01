@@ -98,14 +98,14 @@ public class signup extends AppCompatActivity {
                             // Add more fields as needed
 
                             // Display a welcome message
-                            Toast.makeText(signup.this, "Welcome " + name + "!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(signup.this, "Sign Up Successful !", Toast.LENGTH_SHORT).show();
 
                             startActivity(new Intent(getApplicationContext(), login.class));
                             finish();
                             // Navigate to the next activity or perform other actions upon successful registration
                         } else {
                             // If sign up fails, display a message to the user.
-                            Toast.makeText(signup.this, "Registration failed.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(signup.this, "Sign Up Failed ! ", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
