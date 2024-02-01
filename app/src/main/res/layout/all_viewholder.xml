@@ -8,7 +8,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
         android:background="#FFFFFF"
         app:cardCornerRadius="20dp"
         tools:ignore="MissingConstraints">
@@ -53,7 +54,7 @@
                     android:paddingEnd="10dp"
                     android:text="Rs 2,2500000"
                     android:textColor="@color/textColor"
-                    android:textSize="20dp"
+                    android:textSize="15dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="@+id/tv7"
                     app:layout_constraintTop_toBottomOf="@+id/tv7" />
@@ -81,7 +82,7 @@
                         android:layout_gravity="center"
                         android:text="House No 212, Block D"
                         android:textColor="@color/black"
-                        android:textSize="15dp"
+                        android:textSize="10dp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>

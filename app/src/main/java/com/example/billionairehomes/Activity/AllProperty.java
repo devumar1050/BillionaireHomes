@@ -1,13 +1,19 @@
 package com.example.billionairehomes.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.example.billionairehomes.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +21,14 @@ import java.util.List;
 public class AllProperty extends AppCompatActivity {
 
     private RecyclerView allView;
+    TextView tvUserName;
     private AllAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_property);
         allView=findViewById(R.id.allView);
+        tvUserName=findViewById(R.id.tvUserName);
         List<Property> propertyList = createDummyPropertyList();
 
 
@@ -36,6 +44,24 @@ public class AllProperty extends AppCompatActivity {
 
         allView.setAdapter(adapter);
 
+    }
+
+    private void retrieveUsername() {
+       FirebaseDatabase.getInstance().getReference().addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // Retrieve username from dataSnapshot
+                String username = dataSnapshot.child("name").getValue(String.class);
+                // Set username to TextView
+                   tvUserName.setText(username);
+            }
+
+           @Override
+           public void onCancelled(@NonNull DatabaseError error) {
+
+           }
+
+        });
     }
 
 
