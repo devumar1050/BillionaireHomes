@@ -1,6 +1,10 @@
 package com.example.billionairehomes.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +16,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView tvSeeAll;
+
     private RecyclerView recommendedRecyclerView, nearYouRecyclerView;
     private RecommendedAdapter recommendedAdapter;
     private NearYouAdapter nearYouAdapter;
@@ -20,6 +26,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        tvSeeAll=findViewById(R.id.tv4);
+        tvSeeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AllProperty.class));
+            }
+        });
 
         // Assuming you have a list of houses and properties to display
         List<House> houseList = createDummyHouseList();
