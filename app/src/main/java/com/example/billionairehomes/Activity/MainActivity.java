@@ -1,9 +1,11 @@
 package com.example.billionairehomes.Activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,6 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     TextView tvSeeAll,tvSeeAll2;
+    ImageView logo;
 
     private RecyclerView recommendedRecyclerView, nearYouRecyclerView;
     private RecommendedAdapter recommendedAdapter;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView nav;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +38,14 @@ public class MainActivity extends AppCompatActivity {
 
         tvSeeAll = findViewById(R.id.tv4);
         tvSeeAll2 = findViewById(R.id.tv6);
+        logo=findViewById(R.id.logo);
 
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+            }
+        });
         tvSeeAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,5 +114,9 @@ public class MainActivity extends AppCompatActivity {
         // Add more properties as needed
         return propertyList;
     }
+    public void onHouseClick(House house) {
 
+        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+        startActivity(intent);
+    }
 }

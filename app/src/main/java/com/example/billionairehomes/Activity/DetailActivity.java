@@ -1,6 +1,9 @@
 package com.example.billionairehomes.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +23,7 @@ public class DetailActivity extends AppCompatActivity {
     private ViewPager2 viewPager2;
     private MyViewPagerAdapter myViewPagerAdapter;
     private TabLayout tabLayout;
+    Button btnBuy;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +34,15 @@ public class DetailActivity extends AppCompatActivity {
         viewPager2 = findViewById(R.id.View_pager1);
         myViewPagerAdapter = new MyViewPagerAdapter(this);
         viewPager2.setAdapter(myViewPagerAdapter);
-
+        btnBuy=findViewById(R.id.buyNow);
         tabLayout = findViewById(R.id.tab_layout1);
 
+        btnBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), login.class));
+            }
+        });
         // Attach TabLayout to ViewPager2
         new TabLayoutMediator(tabLayout, viewPager2,
                 (tab, position) -> {
@@ -78,5 +88,8 @@ public class DetailActivity extends AppCompatActivity {
             return 3; // Adjust this according to the number of fragments you have
         }
     }
+
+
+
 }
 
