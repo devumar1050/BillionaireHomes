@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Fragments.ReviewsFragment">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="174dp"
+        android:text="Review"
+        android:textColor="#806C00"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/back_background"
+        android:padding="9dp"
+        app:srcCompat="@drawable/img_3" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/imageView14"
+        android:layout_alignBottom="@+id/imageView14"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="-72dp"
+        android:layout_marginBottom="42dp"
+        android:layout_toEndOf="@+id/imageView14"
+        android:text="Umar"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This home ticks all the boxes! Spacious, serene, and conveniently located near schools and amenities. The master suite is a dream, and the outdoor space is a tranquil retreat. Highly recommended for families seeking comfort and convenience!"
+        android:layout_centerInParent="true"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
+
+</RelativeLayout>

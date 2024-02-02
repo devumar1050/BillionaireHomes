@@ -16,7 +16,7 @@ import java.util.List;
 public class AllPropertySecond extends AppCompatActivity {
 
     private RecyclerView allView2;
-    private AllAdapter adapter;
+    private AllSecondAdapter adapter;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class AllPropertySecond extends AppCompatActivity {
 
         allView2.setLayoutManager(AllLayoutManager);
 
-        adapter = new AllAdapter(propertyList,this);
+        adapter = new AllSecondAdapter(propertyList,this);
 
 
         allView2.setAdapter(adapter);

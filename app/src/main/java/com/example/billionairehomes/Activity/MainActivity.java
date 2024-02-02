@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         recommendedRecyclerView = findViewById(R.id.recommendedView);
         nearYouRecyclerView = findViewById(R.id.nearView);
 
+
         // Initialize and set layout manager for RecyclerViews
         LinearLayoutManager recommendedLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         LinearLayoutManager nearYouLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -102,4 +103,5 @@ public class MainActivity extends AppCompatActivity {
         // Add more properties as needed
         return propertyList;
     }
+
 }
