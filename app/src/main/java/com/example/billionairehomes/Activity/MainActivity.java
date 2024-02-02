@@ -2,38 +2,52 @@ package com.example.billionairehomes.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.billionairehomes.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvSeeAll;
+    TextView tvSeeAll,tvSeeAll2;
 
     private RecyclerView recommendedRecyclerView, nearYouRecyclerView;
     private RecommendedAdapter recommendedAdapter;
     private NearYouAdapter nearYouAdapter;
+
+    BottomNavigationView nav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvSeeAll=findViewById(R.id.tv4);
+        tvSeeAll = findViewById(R.id.tv4);
+        tvSeeAll2 = findViewById(R.id.tv6);
+
         tvSeeAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), AllProperty.class));
             }
         });
+        tvSeeAll2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AllPropertySecond.class));
+            }
+        });
+
 
         // Assuming you have a list of houses and properties to display
         List<House> houseList = createDummyHouseList();

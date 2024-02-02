@@ -1,47 +1,41 @@
 package com.example.billionairehomes.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.example.billionairehomes.R;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllProperty extends AppCompatActivity {
+public class AllPropertySecond extends AppCompatActivity {
 
-    private RecyclerView allView;
+    private RecyclerView allView2;
     private AllAdapter adapter;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_property);
-        allView=findViewById(R.id.allView);
+        setContentView(R.layout.activity_all_property_second);
+        allView2=findViewById(R.id.allView2);
 
         List<Property> propertyList = createDummyPropertyList();
 
 
-        GridLayoutManager AllLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
+        LinearLayoutManager AllLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
 
-        allView.setLayoutManager(AllLayoutManager);
+        allView2.setLayoutManager(AllLayoutManager);
 
-
-        // Initialize and set adapters for RecyclerViews
         adapter = new AllAdapter(propertyList,this);
 
 
-        allView.setAdapter(adapter);
+        allView2.setAdapter(adapter);
 
     }
     private List<Property> createDummyPropertyList() {
@@ -58,5 +52,4 @@ public class AllProperty extends AppCompatActivity {
 
         return propertyList;
     }
-
-    }
+}

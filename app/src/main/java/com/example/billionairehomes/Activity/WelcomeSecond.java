@@ -14,22 +14,22 @@ import android.widget.TextView;
 
 public class WelcomeSecond extends AppCompatActivity {
 
-    Button btnNext;
-    TextView tvSkip;
+    Button btnGetStarted;
+    TextView tvSkip2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome);
+        setContentView(R.layout.activity_welcomesecond);
         init();
-        btnNext.setOnClickListener(new View.OnClickListener() {
+        btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(WelcomeSecond.this, WelcomeSecond.class);
+                Intent intent=new Intent(WelcomeSecond.this, login.class);
                 startActivity(intent);
                 finish();
             }
         });
-        tvSkip.setOnClickListener(new View.OnClickListener() {
+        tvSkip2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(WelcomeSecond.this, login.class);
@@ -40,8 +40,8 @@ public class WelcomeSecond extends AppCompatActivity {
     }
     public void init()
     {
-        btnNext=findViewById(R.id.btnNext);
-        tvSkip=findViewById(R.id.tvSkip);
+        btnGetStarted=findViewById(R.id.btnGetStarted);
+        tvSkip2=findViewById(R.id.tvSkip2);
     }
 
 }
